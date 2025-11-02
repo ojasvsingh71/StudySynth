@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from tensorflow.keras.models import load_model
 from utils.datasets import get_labels
 from utils.inference import detect_faces, apply_offsets, load_detection_model
@@ -10,10 +11,10 @@ from io import BytesIO
 from PIL import Image
 import os
 
-app = Flask(__name__)
-
-# Disable TensorFlow logs (cleaner console)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "https://study-synth-y1po.vercel.app/"}})  
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 detection_model_path = '../trained_models/detection_models/haarcascade_frontalface_default.xml'

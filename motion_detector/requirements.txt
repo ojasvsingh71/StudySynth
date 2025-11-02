@@ -10,3 +10,4 @@ matplotlib
 Flask
 waitress
 scipy
+flask-cors
