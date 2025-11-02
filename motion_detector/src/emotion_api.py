@@ -14,7 +14,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://study-synth-y1po.vercel.app/"}})  
+CORS(app, resources={r"/api/*": {"origins": ["https://study-synth-y1po.vercel.app", "http://localhost:3000"]}})
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 detection_model_path = '../trained_models/detection_models/haarcascade_frontalface_default.xml'
