@@ -7,3 +7,4 @@ opencv-python>=4.9
 imageio
 pillow
 matplotlib
+Flask
