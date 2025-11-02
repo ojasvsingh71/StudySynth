@@ -1,0 +1,12 @@
+{
+  "watch": ["server.js", "sessionStore.js"],
+  "ignore": [
+    "uploads/*",
+    "../frontend/*",
+    "dist/*",
+    "node_modules/*",
+    ".git/*",
+    "*.log"
+  ],
+  "ext": "js,json"
+}
