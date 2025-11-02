@@ -32,7 +32,7 @@ app.post("/detect-emotion", upload.single("image"), async (req, res) => {
     fs.unlinkSync(filePath);
     return res.json({ success: true, emotion: response.data.emotion });
   } catch (err) {
-    console.error("Error detecting emotion:", err.message || err);
+    console.error("Error detecting emotion:", err);
     return res.status(500).json({ success: false, error: err.message || String(err) });
   }
 });
