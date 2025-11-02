@@ -16,8 +16,8 @@ app = Flask(__name__)
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-detection_model_path = os.path.join(BASE_DIR, "trained_models", "detection_models", "haarcascade_frontalface_default.xml")
-emotion_model_path = os.path.join(BASE_DIR, "trained_models", "emotion_models", "fer2013_mini_XCEPTION.102-0.66.hdf5")
+detection_model_path = '../trained_models/detection_models/haarcascade_frontalface_default.xml'
+emotion_model_path = '../trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
 
 emotion_labels = get_labels('fer2013')
 face_detection = load_detection_model(detection_model_path)
