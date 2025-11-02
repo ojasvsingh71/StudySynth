@@ -12,7 +12,10 @@ dotenv.config();
 
 const app = express();
 const upload = multer({ dest: "uploads/" });
-app.use(cors());
+app.use(cors({
+  origin: ["https://study-synth-y1po.vercel.app","http://localhost:5173"],
+  credentials: true,
+}));
 app.use(express.json());
 
 // Config
